@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "extension-test",
+  "description": "This extension find symbol 'B'",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches":    ["*://*/*"],
+      "run_at": "document_end",
+      "all_frames": true,
+      "js": ["content.js"]
+    }
+  ],
+  "background":  {
+    "scripts": ["background.js"]
+  },
+
+  "permissions": [
+    "tabs", "http://*/*", "https://*/", "activeTab"
+  ]
+}
